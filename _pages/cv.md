@@ -32,7 +32,7 @@ Skills
   * C++
   * Java
 * Cuisines:
-  * [ShengYan](images/shengyan.jpg) 
+  * [ShengYan](https://guanyueli.com/images/shengyan.jpg)
   
 Publications
 ======
