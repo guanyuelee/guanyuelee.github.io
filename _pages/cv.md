@@ -32,7 +32,7 @@ Skills
   * C++
   * Java
 * Cuisines:
-  * [ShengYan](https://github.com/guanyuelee/guanyuelee.github.io/tree/master/images/shengyan.jpg) 
+  * [ShengYan](images/shengyan.jpg) 
   
 Publications
 ======
@@ -50,4 +50,4 @@ Leadership and Volunteering
 ======
 * I led my team and we won the Meritorious prize (top 9.74%) in <i> American Mathematical Contest in Modeling / Interdisciplinary Contest in Modeling </i> in 2018. Advisor: Prof. Ping Huang. 
 * I volunteered in <i>Guangzhou South Railway Station</i> in Chinese Spring Festival Travel Season in 2018. 
-* I volunteered in <i>7th China - Russia Youth Games</i> in 2017. [[photo with athletes and workers]](https://github.com/guanyuelee/guanyuelee.github.io/tree/master/images/youthgames.jpg). 
+* I volunteered in <i>7th China - Russia Youth Games</i> in 2017. [[photo with athletes and workers]](images/youthgames.jpg). 
