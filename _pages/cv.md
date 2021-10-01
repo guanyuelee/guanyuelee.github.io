@@ -11,30 +11,29 @@ redirect_from:
 
 Education
 ======
-* B.S. in South China University of Technology, 2019
-* M.S. in South China University of Technology, 2021
+* B.S. in South China University of Technology, 2015-2019.
+* M.S. in South China University of Technology, 2019-2021.
 
-Work experience
+Work Experiences
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Jun. 2021 - present : Research Assistant
+  * Audio and Vision Service Computation Lab, South China University of Technology
+  * Duty included: Semantic Style Transferation, Image Synthesis.  
+  * Supervisor: [Prof. Si Wu](http://www2.scut.edu.cn/cs/2017/0129/c22285a327623/page.htm), [Prof. Yong Xu](http://www2.scut.edu.cn/cs/2017/0629/c22284a328105/page.htm)
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
-
+* Deep Learning Frameworks:
+  * Pytorch
+  * Tensorflow
+  * MindSpore
+* OOP Languages: 
+  * Python
+  * C++
+  * Java
+* Cuisines:
+  * [ShengYan](https://github.com/guanyuelee/guanyuelee.github.io/tree/master/images/shengyan.jpg) 
+  
 Publications
 ======
   <ul>{% for post in site.publications %}
@@ -47,12 +46,8 @@ Talks
     {% include archive-single-talk-cv.html %}
   {% endfor %}</ul>
   
-Teaching
+Leadership and Volunteering
 ======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+* I led my team and we won the Meritorious prize (top 9.74%) in <i> American Mathematical Contest in Modeling / Interdisciplinary Contest in Modeling </i> in 2018. Advisor: Prof. Ping Huang. 
+* I volunteered in <i>Guangzhou South Railway Station</i> in Chinese Spring Festival Travel Season in 2018. 
+* I volunteered in <i>7th China - Russia Youth Games</i> in 2017. [[photo with athletes and workers]](https://github.com/guanyuelee/guanyuelee.github.io/tree/master/images/youthgames.jpg). 
