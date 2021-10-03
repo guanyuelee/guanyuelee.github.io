@@ -14,3 +14,6 @@ I received both of my M.E. and B.E. from South China University of Technology un
 
 I am currently looking for a Ph.D. position on theory bridging representation learning, loss function and network architecture together. If you are interested, please don't hesitate to [contact me](mailto:csliguanyue@mail.scut.edu.cn). 
 
+Update recently
+======
+- A blog introducing our AAAI2021 model [PmSFC](https://guanyueli.com/publication/aaai2021). 
