@@ -17,9 +17,9 @@ When I was tackling traversing in the latent space of generator, I was haunted b
 
 Problem Description
 ======
-Traversing in pre-trained generator has great potential in real life applications, such as image editing, attribute manipulation, and so on. Given a datapoint $z$ in the latent space and a traversing direction $d$, we can change the datapoint $z$ along the direction $d$ with a stride $\epsilon$ as follows: 
+Traversing in pre-trained generator has great potential in real life applications, such as image editing, attribute manipulation, and so on. Given a datapoint $z$ in the latent space and a traversing direction $\gamma$, we can change the datapoint $z_0$ along the direction $\gamma_j$ with a stride $\epsilon$ as follows: 
 
-$$z_m = z + \epsilon d. \tag{1}$$
+$$z(\gamma_j) = z_0 + \epsilon \gamma_j. \tag{1}$$
 
 if the resulting datapoint reflects some attributes, for example, adding glasses to a face, change the length of the hair, etc, then we can say the direction is meaningful. How to find these directions remains open problems. 
 
@@ -62,6 +62,54 @@ A datapoint that is out of data manifold usually abnormal, because it's hardly t
 Our Implementation
 ======
 Let's dive deeper on the implementation. 
+
+Density Preserving Traversing
+------
+In this part, I am going to talking about Density Preserving Traversing: how to preserve the traversing path in the same density region. For Gaussian prior distribution case, it's very simple, because we just need to keep the norm the same as the begining point. Therefore, we could write the traversing path for Gaussian prior distribution as follows: 
+
+$$z_{dp}(\gamma)=\frac{\|z_0\|}{\|z(\gamma_j)\|}z(\gamma_j). \tag{2}$$
+
+For more complex prior distribution, we need to estimate the probability density by sampling it. Therefore, we use a estimation module $F(\cdot)$  to estimate the cumulative density function of prior distribution $p_0$. For simplicity, we assume that the elements of each latent code $z=\{z^{(1)}, z^{(2)}, \cdots, z^{(d)}\}$ are independent and identically distributed, where $d$ denotes the number of dimensions. By definition, the probability density is the derivative of the cumulative distribution function, and we thus have $F(z^{(i)})=Pr(\tau\lt z^{(i)})$ and $p_0(z^{(i)})=F'(z^{i})$, which can be approximated as follows:
+$$F'(z^{(i)})\approx\frac{F(z^{(i)}+\epsilon) - F(z^{(i)})}{\epsilon}, \tag{3}$$
+
+where we use a very small positive value of $\epsilon$. To ensure that $F$ is monotonically increasing, we define a training loss function $l_{mon}$ as follows: 
+$$l_{mon} = \sum_{i=1}^{d} \max(0, v - F'(z^{(i)})), \tag{4}$$ 
+
+where $v$ denotes the minimum slope that must be maintained. To approximate the underlying distribution of latent codes, we define a likelihood-based loss function $l_{lik}$ as follows: 
+
+$$l_{lik} = \sum_{i=1}^{d} -\log F'(z^{(i)}). \tag{5}$$
+
+Benefiting from the density estimation, we formulate density-preserving latent space walks as follows:
+
+$$z_{dp}(\gamma_j) = z_0 + \epsilon \gamma_j + C(z_0, \epsilon, \gamma_j), \tag{6}$$
+
+where $C$ denotes a correction module that aims to learn a correction vector. To enforce the density consistency at the start and end points, a loss $l_{den}$ is defined as follows:
+
+$$l_{den} = \sum_{j=1}^{k}\left\| \sum_{i=1}^{d}\log F'(z_0^{(i)}) - \sum_{i=1}^{d}\log F'(z_{dp}^{(i)}(\gamma_j))\right\|^2. \tag{7}$$
+
+As will be illustrated in the experiments, $C$ plays an important role when performing a large $\epsilon$-step transformation.
+
+Latent Direction Exploration
+------
+Next, we determine the latent directions that give rise to variations in synthesized images in an unsupervised manner. To measure the difference between images in a feature space is typically more effective than that in the image space. We decompose the generator $G$ into two components at an intermediate layer, and the resulting sub-networks are denoted by $G_1$ and $G_2$, respectively. $G_1$ takes a latent vector $z$ as input and produce a set of feature maps $G_1(z)$, which are fed to $G_2$ to synthesize an image. Let $\Gamma = [\gamma_1, \gamma_2, \cdots,\gamma_k ]$ denote a matrix with its columns corresponding to a set of latent directions. We require that moving a latent code in the directions lead to large variations in the intermediate feature space, and define a corresponding loss function $l_{var}$ as follows:
+
+$$\ell_{var} = \sum_{j=1}^{k}-\|\Delta(\bm{z}_0,\bm{\gamma}_j)\|_F^2  +\lambda \sum_{j,h=1}^{k}\texttt{1}_{j \neq h} \cdot \|\Delta(\bm{z}_0,\bm{\gamma}_j)^{T}\Delta(\bm{z}_0,\bm{\gamma}_h)\|_F^2, \tag{8}$$
+
+where the function $\texttt{1}_{j \neq h}$ outputs 1 if $j \neq h$ and 0 otherwise,
+
+$$\Delta(\bm{z}_0,\bm{\gamma}_j) = G_1(\bm{z}_0) -G_1(\bm{z}_{dp}(\bm{\gamma}_j)), \tag{9}$$
+
+where $\lambda$ is a weighting factor, and $\|\cdot\|^2_F$ denotes the squared Frobenius norm. To encourage $\Gamma$ to associate with different factors of variations, the second term in Eq.(8) serves as a penalty for the similarity of feature changes caused by different latent directions. On the other hand, we also require the latent directions to be orthogonal with each other, and define a regularization loss $\ell_{reg}$ as follows:
+
+$$ \ell_{reg} = \|\Gamma^{T}\Gamma - I\|_F^2, \tag{10}$$
+
+where $I$ denotes the identity matrix.
+
+After integrating the above two aspects: density-preserving regularization and latent direction determination, the corresponding optimization problem can be formulated as follows:
+
+$$\min_{F, C, \Gamma} \; \texttt{E}_{\bm{z}_0 \sim \bm{p}_0} [\ell_{mon} + \ell_{lik} + \ell_{den} + \ell_{var}] + \zeta \ell_{reg}, \tag{11}$$
+
+where $\zeta$ is a weighting factor. The density estimation module $F$, correction module $C$ and latent directions $\Gamma$ are jointly optimized in the proposed framework.
 
 Experiments
 ======
