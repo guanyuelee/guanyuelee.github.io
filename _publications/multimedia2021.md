@@ -13,6 +13,68 @@ excerpt:
 
 ---
 
-This paper is about the number 1. The number 2 is left for future work.
+When I was tackling traversing in the latent space of generator, I was haunted by the identity shift in which you cannot well preserve the identity of the synthesized face images. Then I try to dig into this phenomenon. 
+
+Problem Description
+======
+
+Our Ideas
+======
+
+Experiments
+======
+We demonstrate some directions in BigGAN and StyleGAN. For dog in BigGAN, we mainly found some directions that cause position change, like left-right, zoom in-out and up-down. For human face in StyleGAN, various directions are found. If the intermediate layer we set to optimize the maximum variation is close to the input, the attribution we found are age, gender, etc. Otherwise, attributes like glasses and bear can be found. 
+<table>
+    <tr>
+        <td>
+            <center>
+            <img src="../images/papers/acmmm2021/dog-left-right.gif" width=300>
+            <br>
+            <div style="color:orange;
+            display: inline-block;
+            color: black;
+            padding: 2px;">
+            (a) Left-right
+            </div>
+            </center>
+        </td>
+        <td>
+            <center>
+            <img src="../images/papers/acmmm2021/dog_zoom.gif" width=300>
+            <br>
+            <div style="color:orange;
+            display: inline-block;
+            color: black;
+            padding: 2px;">
+            (b) Zoom in - out
+            </div>
+            </center>
+        </td>
+        <td>
+            <center>
+            <img src="../images/papers/acmmm2021/dog_up_down.gif" width=300>
+            <br>
+            <div style="color:orange;
+            display: inline-block;
+            color: black;
+            padding: 2px;">
+            (c) Up - down
+            </div>
+            </center>
+        </td>
+    </tr>
+</table>
+<center>
+<div style="color:orange;
+    display: inline-block;
+    color: black;
+    padding: 2px;">
+    Figure x. Some of the directions in BigGAN. 
+    </div>
+</center>
+
+
+Reference 
+=====
 
 [Download paper here](https://1drv.ms/b/s!AqN-jN9xngyFohsv5_4BvANJPMcG)
