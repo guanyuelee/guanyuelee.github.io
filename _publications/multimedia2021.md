@@ -96,7 +96,6 @@ Next, we determine the latent directions that give rise to variations in synthes
 
 where the function $\texttt{1}_{j \neq h}$ outputs 1 if $j \neq h$ and 0 otherwise,
 
-$$\Delta({z}_0,{\gamma}_j) = G_1({z}_0) -G_1({z}_{dp}({\gamma}_j)), \tag{9}$$
 
 where $\lambda$ is a weighting factor, and $\|\cdot\|^2_F$ denotes the squared Frobenius norm. To encourage $\Gamma$ to associate with different factors of variations, the second term in Eq.(8) serves as a penalty for the similarity of feature changes caused by different latent directions. On the other hand, we also require the latent directions to be orthogonal with each other, and define a regularization loss $l_{reg}$ as follows:
 
