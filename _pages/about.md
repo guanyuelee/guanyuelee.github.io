@@ -16,5 +16,6 @@ I am currently looking for a Ph.D. position on theory bridging representation le
 
 Update recently
 ======
+- A blog introducing our ACM Multimedia2021 model [DP-LaSE](https://guanyueli.com/publication/acmmm2021). 
 - A blog introducing our AAAI2021 model [PmSFC](https://guanyueli.com/publication/aaai2021). 
 - A blog introducing our ICME2021 model [AdvAI](https://guanyueli.com/publication/icme2021). 
