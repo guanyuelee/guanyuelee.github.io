@@ -93,11 +93,11 @@ Latent Direction Exploration
 ------
 Next, we determine the latent directions that give rise to variations in synthesized images in an unsupervised manner. To measure the difference between images in a feature space is typically more effective than that in the image space. We decompose the generator $G$ into two components at an intermediate layer, and the resulting sub-networks are denoted by $G_1$ and $G_2$, respectively. $G_1$ takes a latent vector $z$ as input and produce a set of feature maps $G_1(z)$, which are fed to $G_2$ to synthesize an image. Let $\Gamma = [\gamma_1, \gamma_2, \cdots,\gamma_k ]$ denote a matrix with its columns corresponding to a set of latent directions. We require that moving a latent code in the directions lead to large variations in the intermediate feature space, and define a corresponding loss function $l_{var}$ as follows:
 
-$$\ell_{var} = \sum_{j=1}^{k}-\|\Delta(\bm{z}_0,\bm{\gamma}_j)\|_F^2  +\lambda \sum_{j,h=1}^{k}\texttt{1}_{j \neq h} \cdot \|\Delta(\bm{z}_0,\bm{\gamma}_j)^{T}\Delta(\bm{z}_0,\bm{\gamma}_h)\|_F^2, \tag{8}$$
+$$\ell_{var} = \sum_{j=1}^{k}-\|\Delta({z}_0,{\gamma}_j)\|_F^2  +\lambda \sum_{j,h=1}^{k}\texttt{1}_{j \neq h} \cdot \|\Delta({z}_0,{\gamma}_j)^{T}\Delta({z}_0,{\gamma}_h)\|_F^2, \tag{8}$$
 
 where the function $\texttt{1}_{j \neq h}$ outputs 1 if $j \neq h$ and 0 otherwise,
 
-$$\Delta(\bm{z}_0,\bm{\gamma}_j) = G_1(\bm{z}_0) -G_1(\bm{z}_{dp}(\bm{\gamma}_j)), \tag{9}$$
+$$\Delta({z}_0,{\gamma}_j) = G_1({z}_0) -G_1({z}_{dp}({\gamma}_j)), \tag{9}$$
 
 where $\lambda$ is a weighting factor, and $\|\cdot\|^2_F$ denotes the squared Frobenius norm. To encourage $\Gamma$ to associate with different factors of variations, the second term in Eq.(8) serves as a penalty for the similarity of feature changes caused by different latent directions. On the other hand, we also require the latent directions to be orthogonal with each other, and define a regularization loss $\ell_{reg}$ as follows:
 
@@ -107,7 +107,7 @@ where $I$ denotes the identity matrix.
 
 After integrating the above two aspects: density-preserving regularization and latent direction determination, the corresponding optimization problem can be formulated as follows:
 
-$$\min_{F, C, \Gamma} \; \texttt{E}_{\bm{z}_0 \sim \bm{p}_0} [\ell_{mon} + \ell_{lik} + \ell_{den} + \ell_{var}] + \zeta \ell_{reg}, \tag{11}$$
+$$\min_{F, C, \Gamma} \texttt{E}_{{z}_0 \sim {p}_0} [\ell_{mon} + \ell_{lik} + \ell_{den} + \ell_{var}] + \zeta \ell_{reg}, \tag{11}$$
 
 where $\zeta$ is a weighting factor. The density estimation module $F$, correction module $C$ and latent directions $\Gamma$ are jointly optimized in the proposed framework.
 
