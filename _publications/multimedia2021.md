@@ -97,8 +97,6 @@ Next, we determine the latent directions that give rise to variations in synthes
 where the function $\texttt{1}_{j \neq h}$ outputs 1 if $j \neq h$ and 0 otherwise,
 
 
-where $\lambda$ is a weighting factor, and $\|\cdot\|^2_F$ denotes the squared Frobenius norm. To encourage $\Gamma$ to associate with different factors of variations, the second term in Eq.(8) serves as a penalty for the similarity of feature changes caused by different latent directions. On the other hand, we also require the latent directions to be orthogonal with each other, and define a regularization loss $l_{reg}$ as follows:
-
 $$ l_{reg} = \|\Gamma^{T}\Gamma - I\|_F^2, \tag{10}$$
 
 where $I$ denotes the identity matrix.
@@ -156,7 +154,7 @@ We demonstrate some directions in BigGAN and StyleGAN. For dog in BigGAN, we mai
     display: inline-block;
     color: black;
     padding: 2px;">
-    Figure x. Some of the directions in BigGAN. 
+    Figure 3. Some of the directions in BigGAN. 
     </div>
 </center>
 
@@ -217,11 +215,9 @@ We demonstrate some directions in BigGAN and StyleGAN. For dog in BigGAN, we mai
     display: inline-block;
     color: black;
     padding: 2px;">
-    Figure x. Some of the directions in PGGAN. 
+    Figure 4. Some of the directions in PGGAN. 
     </div>
 </center>
 
-Reference 
-=====
 
-[Download paper here](https://1drv.ms/b/s!AqN-jN9xngyFohsv5_4BvANJPMcG)
+[[Download paper here]](https://1drv.ms/b/s!AqN-jN9xngyFohsv5_4BvANJPMcG)
