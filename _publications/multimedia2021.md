@@ -222,5 +222,8 @@ We demonstrate some directions in BigGAN and StyleGAN. For dog in BigGAN, we mai
     </div>
 </center>
 
+There is more analysis available in our paper, for example: 
+- The estimation accuracy of our model. 
+- The disentangle results of our model using [subspace](https://guanyueli.com/publication/aaai2021) propsed in our work.
 
 [[Download paper here]](https://1drv.ms/b/s!AqN-jN9xngyFohsv5_4BvANJPMcG)
