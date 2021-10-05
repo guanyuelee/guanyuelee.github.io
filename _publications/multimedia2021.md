@@ -101,13 +101,11 @@ $$\Delta({z}_0,{\gamma}_j) = G_1({z}_0) -G_1({z}_{dp}({\gamma}_j)), \tag{9}$$
 
 where $\lambda$ is a weighting factor. To encourage $\Gamma$ to associate with different factors of variations, the second term in Eq.(8) serves as a penalty for the similarity of feature changes caused by different latent directions. On the other hand, we also require the latent directions to be orthogonal with each other, and define a regularization loss $l_{reg}$ as follows:
 
-$$ l_{reg} = \|\Gamma^{T}\Gamma - I\|_F^2, \tag{10}$$
+$$l_{reg} = \|\Gamma^{T}\Gamma - I\|_F^2, \tag{10}$$
 
-where $I$ denotes the identity matrix.
+where $I$ denotes the identity matrix. After integrating the above two aspects: density-preserving regularization and latent direction determination, the corresponding optimization problem can be formulated as follows:
 
-After integrating the above two aspects: density-preserving regularization and latent direction determination, the corresponding optimization problem can be formulated as follows:
-
-$$\min_{F, C, \Gamma} \texttt{E}_{{z}_0 \sim {p}_0} [l_{mon} + l_{lik} + l_{den} + l_{var}] + \zeta l_{reg}, \tag{11}$$
+$$\min_{F, C, \Gamma} \texttt{E}_{z_0 \sim p_0} [l_{mon} + l_{lik} + l_{den} + l_{var}] + \zeta l_{reg}, \tag{11}$$
 
 where $\zeta$ is a weighting factor. The density estimation module $F$, correction module $C$ and latent directions $\Gamma$ are jointly optimized in the proposed framework.
 
