@@ -1,6 +1,6 @@
 ---
 title: 'Prepare the training dataset for PT-CS-Translator'
-date: 2021-10-01
+date: 2021-10-21
 header: 
     teaser: "../images/posts/how-to-prepare-the-dataset-for-training/teaser.png"
 excerpt:
