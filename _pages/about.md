@@ -17,7 +17,7 @@ I am currently looking for a Ph.D. position on theory bridging representation le
 Update recently
 ======
 - PT-CS-Translator: Translate Chinese to ChaoshanHua by Machine Learning. coming soon. 
-- PT-CS-Translator Dataset: Translate between PutongHua and ChaoshanHua using Machine Learning. Help me collect your translations as part of our open-source dataset. [[English](https://demo.guanyueli.com/model/pt_cs_translator_eng), [Chinese](https://demo.guanyueli.com/model/pt_cs_translator) webpage]. 
+- PT-CS-Translator Dataset: Help me collect your translations as part of our open-source dataset. [[English](https://demo.guanyueli.com/model/pt_cs_translator_eng), [Chinese](https://demo.guanyueli.com/model/pt_cs_translator) webpage]. 
 - 潮汕普通话翻译数据集：如果您会说潮汕话，请帮助我翻译几句吧！[[中文](https://demo.guanyueli.com/model/pt_cs_translator) 页面].  
 - A blog introducing our ACM Multimedia2021 model [DP-LaSE](https://guanyueli.com/publication/multimedia2021). 
 - A blog introducing our AAAI2021 model [PmSFC](https://guanyueli.com/publication/aaai2021). 

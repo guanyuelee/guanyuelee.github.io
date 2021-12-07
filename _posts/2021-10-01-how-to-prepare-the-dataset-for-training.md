@@ -11,7 +11,7 @@ excerpt:
 How to prepare dataset for training the model? 
 =====
 
-This blog will introduce how I prepare a website [PT-CS-Dataset](https://demo.guanyueli.com/model/pt_cs_translator) for collecting audio translations from Chaoshanese. The header will display the number of visitors and translations. By two days after the website was published, the header displayed that there were already 37 visitors and 431 translations, with every visitor donating about 20 translations on average.  
+This blog will introduce how I prepare a website [PT-CS-Dataset](https://demo.guanyueli.com/model/pt_cs_translator) for collecting audio translations from Chaoshanese. The header will display the number of visitors and translations. By two days after the website was published, there were already 37 visitors and 431 translations, with every visitor donating about 20 translations on average.  
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
