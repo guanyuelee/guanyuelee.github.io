@@ -38,13 +38,13 @@ After inputting your basic personal information, you are encouraged to input you
     display: inline-block;
     color: black;
     padding: 2px;">
-    Figure 2. Basic information of the user. 
+    Figure 3. Basic information of the user. 
     </div>
 </center>
 
 The website requires you to grant recording permission for us, so you need to check if your PCs or smartphones are capable of recording. If the button becomes green after a click, you are ready to record and contribute to our dataset. 
 
-The website will generate a random sentence for you to translate. You need to click the "Record" button before you can speak. You are required to speak fluently in a normal tone as if you were talking. You can use the "Play" button to preview your recording. The system allows you to record as many times as you like before submitting your final version. Once you submit your translation, it will be uploaded to our dataset, and the system will return you the following sentence. You don't have to retype your information if you continue. Therefore I believe you will have a smooth recording experience. Usually, every donator records 20-50 translations on average. 
+The website will generate a random sentence for you to translate. You need to click the "Record" button before you can speak. You are required to speak fluently in a normal tone as if you were talking. You can use the "Play" button to preview your recording. The system allows you to record as many times as you like before submitting your final version. The first sentence is used for the user to get familiar with the UI so it won't be uploaded to the system. The system will upload your second and later sentences. Once you submit your translation, it will be uploaded to our dataset, and the system will return you the following sentence. You don't have to retype your information if you continue. Therefore I believe you will have a smooth recording experience. Usually, every donator records 20-50 translations on average. 
 
 <center>
     <img style="border-radius: 0.3125em;
@@ -74,7 +74,7 @@ I used the [Bulma](https://bulma.io/) as my CSS framework that renders beautiful
 
 About the Database
 =======
-I used the [sqlite3]() as the database for storing the paths of uploaded translations. 
+I used the [sqlite3]() as the database for storing the paths of uploaded translations. Actually, sqlite3 help me manage the whole data structure for the translations. For example, I use the sqlite3 to keep track of the path of sentences and the translations as well. 
 
 
 
