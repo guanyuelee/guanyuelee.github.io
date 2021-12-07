@@ -1,5 +1,5 @@
 ---
-title: 'How to translate ChaoShanHua to PuTongHua? '
+title: 'Prepare the training dataset for PT-CS-Translator'
 date: 2021-10-01
 header: 
     teaser: "../images/posts/how-to-prepare-the-dataset-for-training/teaser.png"

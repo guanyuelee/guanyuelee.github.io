@@ -3,8 +3,7 @@ title: 'How to translate ChaoShanHua to PuTongHua? '
 date: 2021-10-01
 header: 
     teaser: "../images/posts/how-to-translate-chaoshanhua-to-putonghua/teaser.png"
-excerpts:
-    <p>One of my goals to learn computer science is to implement a translator that can translate PutongHua to ChaoshanHua. In the project of my C++ course, when I was a freshman, I implemented a prototype that translates PutongHua to characters by [Xunfei]() API and then converted the characters to ChaoshanHua according to the recorded audio of each word (Lol, how naïve it was). It's far from satisfactory because our program doesn't consider the semantics of the language! Due to its complexity, I postponed this project and continued my studies in computer science. Thanks to the deep learning I learned under the supervision of my advisor Professor Si Wu, I am reconsidering this project with serious commitment!  </p>
+excerpts: <p>One of my goals to learn computer science is to implement a translator that can translate PutongHua to ChaoshanHua. In the project of my C++ course, when I was a freshman, I implemented a prototype that translates PutongHua to characters by [Xunfei]() API and then converted the characters to ChaoshanHua according to the recorded audio of each word (Lol, how naïve it was). It's far from satisfactory because our program doesn't consider the semantics of the language! Due to its complexity, I postponed this project and continued my studies in computer science. Thanks to the deep learning I learned under the supervision of my advisor Professor Si Wu, I am reconsidering this project with serious commitment!  </p>
 ---
 
 Why this blog? 
