@@ -1,35 +1,35 @@
 ---
-title: "Adversarial Adaptive Interpolation for Regularizing Representation Learning and Image Synthesis in Autoencoders"
+title: "Adversarial Adaptive Interpolation in Autoencoders for Dually Regularizing Representation Learning"
 collection: publications
-permalink: /publication/icme2021
+permalink: /publication/ieeemm2022
 excerpt: ''
-date: 2021-3-1
-venue: 'ICME'
+date: 2022-1-1
+venue: 'IEEE MultiMedia'
 header:
-    teaser: 'papers/icme2021/teaser.png'
+    teaser: 'papers/ieeemm2022/teaser.png'
 excerpt:
     <p>A new interpolation method that follows the data manifold. </p>
     <p>Data interpolation is typically used to explore and understand the latent representation learnt by a deep network. Naive linear interpolation may induce mismatch between the interpolated data and the underlying manifold of the original data. In this paper, we propose an Adversarial Adaptive Interpolation (AdvAI) approach for facilitating representation learning and image synthesis in autoencoders. To determine an interpolation path that stays on the manifold, we incorprate an interpolation correction module, which learns to offset the deviation from the manifold. Further, we perform matching with a prior distribution to control the characteristics of the representation. The data synthesized from random codes along with interpolation-based regularization are in turn used to constrain the representation learning process. In the experiments, the superior performance of the proposed approach demonstrates the effectiveness of AdvAI and associated regularizers in a variety of downstream tasks.</p>
     
 ---
-[[Download]](https://ieeexplore.ieee.org/abstract/document/9428311), [[Github]](https://github.com/guanyuelee/AdvAI)
+[[Download]](https://ieeexplore.ieee.org/abstract/document/9706300), [[Github]](https://github.com/guanyuelee/AdvAI)
 
 ----
 
-If you are interested in followings: 
-- How to interprete the latent space of GAN by interpolation?
-- An amazing phenomenon that is neglected by most people. 
+If you are interested in the followings: 
+- How to interpolate the latent space of GAN by interpolation?
+- Most of researchers neglect distribution mismatch in the latent space.  
 
-This paper is just suitable to you. Enjoy it!
+This article is suitable to you. Enjoy it!
 
 Interpolation in GAN
 ======
-There plenty of ways to interprete latent space of GAN, like [GAN inversion](https://guanyueli.com/publication/aaai2021), interpolation. In this paper, we are going to talk about interpolation and examine its property. 
+There are plenty of ways to interprete the latent space of GAN, like [GAN inversion](https://guanyueli.com/publication/aaai2021), interpolation. In this paper, we are going to talk about interpolation and examine its properties. 
 
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="../images/papers/icme2021/interpolation figure.png" width=400>
+    src="../images/papers/ieeemm2022/interpolation figure.png" width=400>
     <br>
     <div style="color:orange;
     display: inline-block;
@@ -39,7 +39,7 @@ There plenty of ways to interprete latent space of GAN, like [GAN inversion](htt
     </div>
 </center>
 
-GAN is capable to learn the distribution of real dataset. It's believed that if GAN learns the data manifold of real dataset, it learns semantics from the dataset instead of memorizing the dataset. Formally speaking, given a pre-trained generator $G$ and two randomly sampled noise $z_1$ and $z_2$, we can use interpolation to get the middle datapoint $z_\alpha=f(z_1, z_2, \alpha)$ by interpolation method $f$. There exist plenty of interpolation methods, and I will list them as follows: 
+GAN is capable of learning a complex distribution of real dataset. It's believed that if GAN learns the data manifold of real dataset, it learns semantics from the dataset instead of memorizing the dataset. Formally speaking, given a pre-trained generator $G$ and two randomly sampled noise $z_1$ and $z_2$, we can use interpolation to get the middle datapoint $z_\alpha=f(z_1, z_2, \alpha)$ by interpolation method $f$. There exist plenty of interpolation methods, and I will list them as follows: 
 - Most commom interpolation --- linear interpolation: 
 $$f(z_1, z_2, \alpha) = \alpha z_1 + (1-\alpha) z_2.$$
 - Spherical interpolation: 
@@ -50,7 +50,7 @@ You can use interpolation to generate a series of images by varying interpolatio
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="../images/papers/icme2021/interpolation.png">
+    src="../images/papers/ieeemm2022/interpolation.png">
     <br>
     <div style="color:orange;
     display: inline-block;
@@ -67,7 +67,7 @@ A phenomenon that is frequently neglected by researchers is distribution mismatc
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="../images/papers/icme2021/mismatch.png" width=400>
+    src="../images/papers/ieeemm2022/mismatch.png" width=400>
     <br>
     <div style="color:orange;
     display: inline-block;
@@ -86,7 +86,7 @@ Our method adopts **adversarial training** into interpolation to cope with distr
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="../images/papers/icme2021/advai.png" width=600>
+    src="../images/papers/ieeemm2022/advai.png" width=600>
     <br>
     <div style="color:orange;
     display: inline-block;
@@ -113,7 +113,7 @@ After appropriate training, we show the experiment results of AdvAI in Figure 5.
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="../images/papers/icme2021/advai_toyexample.png" width=600>
+    src="../images/papers/ieeemm2022/advai_toyexample.png" width=600>
     <br>
     <div style="color:orange;
     display: inline-block;
@@ -128,7 +128,7 @@ AdvAI can be used to interprete latent space of GAN with priority over other pre
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="../images/papers/icme2021/exp_interpolation.png">
+    src="../images/papers/ieeemm2022/exp_interpolation.png">
     <br>
     <div style="color:orange;
     display: inline-block;
@@ -142,11 +142,11 @@ For more analysis on:
 - How to use AdvAI on representation learning? 
 - How they can improve generation quality? 
 
-Please refer to [our paper](https://ieeexplore.ieee.org/abstract/document/9428311) for more information. 
+Please refer to [our paper](https://ieeexplore.ieee.org/abstract/document/9706300) for more information. 
  
 
 Reference
 ======
 [1] White, T. (2016). Sampling generative networks. arXiv preprint arXiv:1609.04468.
 
-Recommended citation: Li, G., Wei, X., Qian, S., Wu, S., Yu, Z., & Wong, H. S. (2021, July). Adversarial Adaptive Interpolation for Regularizing Representation Learning and Image Synthesis in Autoencoders. <i>In Proceedings of 2021 IEEE International Conference on Multimedia and Expo (ICME)</i>(pp. 1-6).
+Recommended citation: G. Li, X. Wei, S. Wu, Z. Yu, S. Qian and H. S. Wong, "Adversarial Adaptive Interpolation in Autoencoders for Dually Regularizing Representation Learning," in IEEE MultiMedia, doi: 10.1109/MMUL.2022.3148991.
