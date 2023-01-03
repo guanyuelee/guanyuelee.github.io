@@ -2,7 +2,7 @@
 title: "安装PointNeRF相关环境"
 date: 2023-01-03
 header: 
-    teaser: "dd.[ng"
+    teaser: "../images/posts/pointnerf/teaser.png"
 excerpt: <p> 以前安装过一次PointNeRF的环境，但是这次在自己的服务器上又要安装一遍，记忆有点模糊了，所以决定以后的实验一定都要做一个记录。感觉这种重复做轮子的事情很麻烦，所以记录下来，第三次安装环境的时候可以查看 </p>
 ---
 
