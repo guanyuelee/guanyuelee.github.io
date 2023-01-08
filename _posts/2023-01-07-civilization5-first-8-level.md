@@ -1,9 +1,9 @@
 ---
-title: "PointNeRF的参数配置"
+title: "文明5首次过神"
 date: 2023-01-03
 header: 
     teaser: "../images/posts/civ5/first_teaser.png"
-excerpt: <p> PointNeRF的参数实在太多，所以制作了一个表格来帮忙记住 </p>
+excerpt: <p> 记录第一次过神的时刻 </p>
 ---
 
 ### 总结一下第一次过civ5神的经历
