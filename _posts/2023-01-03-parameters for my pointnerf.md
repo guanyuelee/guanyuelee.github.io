@@ -1,10 +1,3 @@
-<!--
- * @Author       : Guanyue li
- * @Date         : 2023-01-04 14:43:52
- * @LastEditTime : 2023-01-04 14:48:48
- * @Description  : file content
- * @FilePath     : \Guanyue Li Website\_posts\2023-01-03-parameters for my pointnerf.md
--->
 ---
 title: "PointNeRF的参数配置"
 date: 2023-01-03
